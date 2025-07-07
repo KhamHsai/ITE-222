@@ -10,7 +10,7 @@
     </div>
   @endif
 
-  <form action="{{ route('store')}}" method="POST">
+  <form action="{{ route('blogs.store')}}" method="POST">
       @csrf
       <label>Title:</label> <br>
       <input type="text" name="title"><br><br>

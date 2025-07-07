@@ -12,7 +12,12 @@ Route::get('/hello', function () {
 
 Route::get('/welcome', [PageController::class, 'welcome']);
 Route::get('/home', [HomeController::class, 'home']);
-Route::get('/admin', [AdminController::class, 'admin']);
-Route::get('/create', [BlogController::class, 'create'])->name('create');
-Route::post('/blog', [BlogController::class, 'store'])->name('store');
-Route::get('/index', [BlogController::class, 'index'])->name('index');
+
+
+Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
+Route::post('/admin/store', [AdminController::class, 'store'])->name('admin.store');
+
+Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/blog', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/blogs/index', [BlogController::class, 'index'])->name('blogs.index');

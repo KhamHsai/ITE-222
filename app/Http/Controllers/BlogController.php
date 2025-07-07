@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function create(){
-        return view('create');
+        return view('blogs.create');
     }
 
     public function index(){
         $blogs = Blog::all();
-        return view('index', compact('blogs'));
+        return view('blogs.index', compact('blogs'));
     }
 
     public function store(Request $request){
@@ -27,6 +27,6 @@ class BlogController extends Controller
             'content' => $request->content,
         ]);
 
-        return redirect()->route('index')->with('success', 'Blog created');
+        return redirect()->route('blogs.index')->with('success', 'Blog created');
     }
 }
